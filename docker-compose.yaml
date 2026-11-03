@@ -1,0 +1,22 @@
+name: file-manager-example
+
+services:
+  rustfs:
+    image: rustfs/rustfs:1.0.4
+    container_name: rustfs-file-manager
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      - RUSTFS_ADDRESS=:9000
+      - RUSTFS_CONSOLE_ADDRESS=:9001
+      - RUSTFS_CONSOLE_ENABLE=true
+      - RUSTFS_ACCESS_KEY=kelasadmin
+      - RUSTFS_SECRET_KEY=kelasrahasia123
+      - RUSTFS_CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:3001,http://localhost:3002
+    volumes:
+      - rustfs-data:/data
+    restart: unless-stopped
+
+volumes:
+  rustfs-data:
