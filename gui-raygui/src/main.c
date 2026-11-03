@@ -406,9 +406,12 @@ int main(int argc, char **argv) {
         return result;
     }
 
-    SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_WINDOW_HIGHDPI);
     InitWindow(1100, 700, "File Manager S3 - raygui");
     SetTargetFPS(60);
+    TraceLog(LOG_INFO, "screen=%dx%d render=%dx%d dpi=%.1fx%.1f",
+             GetScreenWidth(), GetScreenHeight(), GetRenderWidth(), GetRenderHeight(),
+             GetWindowScaleDPI().x, GetWindowScaleDPI().y);
 
     api_global_init();
     cache_init();

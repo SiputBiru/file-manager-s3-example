@@ -94,6 +94,8 @@ S3_API=http://localhost:3001 S3_USER=tester \
 ## Notes
 
 - CORS is not needed. This is a native client, not a browser.
+- The window enables `FLAG_WINDOW_HIGHDPI`, so on Retina displays it renders at 2x instead of being upscaled.
+- The interface uses the default raygui font, which keeps the look consistent with the library.
 - Resize and crop happen on the backend. The client only displays the results.
 - Save downloads the current display image. If the file has been edited, the saved image is the edited result; otherwise it is the original object.
 - Thumbnails are decoded with stb_image, because some raylib builds ship without JPEG support. Raylib still handles the window, OpenGL, and textures.
