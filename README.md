@@ -1,7 +1,8 @@
 # File Manager S3 Example
 
-<img width="800" alt="387734fd4141ed50301e1f21271bbacfe85cc08dcdeb3f9547b679c931e26944" src="https://github.com/user-attachments/assets/d85de864-d83f-4f34-8e11-eedf2938165a" />
-
+<img width="480" alt="387734fd4141ed50301e1f21271bbacfe85cc08dcdeb3f9547b679c931e26944" src="https://github.com/user-attachments/assets/d85de864-d83f-4f34-8e11-eedf2938165a" />
+<br>
+<img width="480" alt="image" src="https://github.com/user-attachments/assets/e8946672-3339-41e0-a3df-0507d5f348f1" />
 
 One API contract, three implementations: Node.js with sharp, Go, and Rust with Axum. All of them use RustFS as a local S3 server and SQLite for file metadata.
 
@@ -114,6 +115,7 @@ cargo run
 Open `http://localhost:3002`.
 
 ## Native GUI (raygui)
+
 
 The repository also includes a native desktop client in `gui-raygui/`, written in C with raylib and raygui. It uses the same five API endpoints.
 
