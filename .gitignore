@@ -1,0 +1,11 @@
+.DS_Store
+.env
+node_modules/
+data/
+*.db
+*.db-shm
+*.db-wal
+target/
+
+# Go build output
+file-manager-go
