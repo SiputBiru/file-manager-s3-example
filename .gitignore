@@ -9,3 +9,6 @@ target/
 
 # Go build output
 file-manager-go
+
+# CMake build output
+build/

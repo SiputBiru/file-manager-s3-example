@@ -113,6 +113,27 @@ cargo run
 
 Open `http://localhost:3002`.
 
+## Native GUI (raygui)
+
+The repository also includes a native desktop client in `gui-raygui/`, written in C with raylib and raygui. It uses the same five API endpoints.
+
+```bash
+cd gui-raygui
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+./build/gui-raygui
+```
+
+It supports drag and drop, a native file dialog, thumbnails, resize, square crop, saving the selected image, delete, and switching the user ID. The default backend is `http://localhost:3000`.
+
+For a headless check:
+
+```bash
+./build/gui-raygui --selftest /path/to/image.jpg
+```
+
+The native client does not need CORS, because it is not a browser. The HTML page still does.
+
 ## Browser Uploads and CORS
 
 The browser uploads directly to RustFS on port 9000, so the request is cross-origin. RustFS only sends CORS headers when `RUSTFS_CORS_ALLOWED_ORIGINS` is set. The Compose file includes this value:
@@ -178,6 +199,7 @@ All three implementations were tested against RustFS 1.0.4 with the same flow:
 - The ports differ so all three can run at the same time.
 - Images are processed on the server, not in the browser.
 - The original object is never overwritten. Every edit creates new derived objects.
+- A native raygui client is available in `gui-raygui/`. The HTML page remains available.
 
 ## Troubleshooting
 
